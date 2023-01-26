@@ -5,7 +5,7 @@ class UserPlant(models.Model):
     
     reminder = models.CharField(max_length=50,blank=True)
     surname = models.CharField(max_length=50,blank=True)
-    last_watering = models.DateField(blank=True)
+    last_watering = models.DateField(null=True)
     details = models.CharField(max_length=50, blank=True)
 
     name = models.CharField(max_length=40)

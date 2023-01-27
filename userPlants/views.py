@@ -16,8 +16,7 @@ class UserPlantsView(generics.ListCreateAPIView):
 
     def get_queryset(self):
         userId = self.request.query_params.get("userId", None)
-        print(self.request)
-
+        
         if userId:
             return UserPlant.objects.filter(userId=userId)
 

@@ -5,7 +5,7 @@ class UserPlant(models.Model):
     
     reminder = models.CharField(max_length=50,blank=True)
     surname = models.CharField(max_length=50,blank=True)
-    last_watering = models.DateField(null=True)
+    last_watering = models.DateTimeField(null=True)
     details = models.CharField(max_length=50, blank=True)
 
     name = models.CharField(max_length=40)
@@ -18,3 +18,5 @@ class UserPlant(models.Model):
     image = models.CharField(max_length=200)
 
     userId = models.ForeignKey("users.User", on_delete=models.CASCADE, related_name="userPlants")
+
+    

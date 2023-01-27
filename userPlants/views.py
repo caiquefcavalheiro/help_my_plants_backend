@@ -7,7 +7,18 @@ from .models import UserPlant
 from .serializers import UserPlantSerializer
 
 
-class UserPlantsView(generics.ListCreateAPIView):
+class UserPlantsViewCreate(generics.CreateAPIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]  
+
+    queryset = UserPlant.objects.all()
+    serializer_class = UserPlantSerializer
+
+    def perform_create(self, serializer):
+        user = self.request.user
+        serializer.save(userId=user)
+
+class UserPlantsViewList(generics.ListAPIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]  
 
@@ -19,10 +30,6 @@ class UserPlantsView(generics.ListCreateAPIView):
         
         if userId:
             return UserPlant.objects.filter(userId=userId)
-
-    def perform_create(self, serializer):
-        user = self.request.user
-        serializer.save(userId=user)
 
 
 

@@ -118,15 +118,15 @@ DATABASES = {
 
 DATABASE_URL = os.getenv('DATABASE_URL')
 
-# if DATABASE_URL:
-#     db_from_env = dj_database_url.config(
-#         default=DATABASE_URL, conn_max_age=500, ssl_require=True)
-#     DATABASES['default'].update(db_from_env)
-#     DEBUG = False
+if DATABASE_URL:
+    db_from_env = dj_database_url.config(
+        default=DATABASE_URL, conn_max_age=500, ssl_require=True)
+    DATABASES['default'].update(db_from_env)
+    DEBUG = False
 
-# if not DEBUG:
-#     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-#     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

@@ -32,7 +32,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["web-production-d7d5.up.railway.app", "127.0.0.1", "localhost:3000"]
+ALLOWED_HOSTS = ["web-production-d7d5.up.railway.app", "127.0.0.1", "*"]
 
 
 # Application definition
@@ -81,7 +81,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS=True
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'core.urls'
 
@@ -118,15 +118,15 @@ DATABASES = {
 
 DATABASE_URL = os.getenv('DATABASE_URL')
 
-if DATABASE_URL:
-    db_from_env = dj_database_url.config(
-        default=DATABASE_URL, conn_max_age=500, ssl_require=True)
-    DATABASES['default'].update(db_from_env)
-    DEBUG = False
+# if DATABASE_URL:
+#     db_from_env = dj_database_url.config(
+#         default=DATABASE_URL, conn_max_age=500, ssl_require=True)
+#     DATABASES['default'].update(db_from_env)
+#     DEBUG = False
 
-if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# if not DEBUG:
+#     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+#     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

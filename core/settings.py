@@ -32,7 +32,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["web-production-d7d5.up.railway.app", "127.0.0.1"]
+ALLOWED_HOSTS = ["web-production-d7d5.up.railway.app", "127.0.0.1", "localhost:3000"]
 
 
 # Application definition

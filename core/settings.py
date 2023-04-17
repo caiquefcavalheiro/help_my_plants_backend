@@ -15,6 +15,7 @@ from django.core.management.utils import get_random_secret_key
 import os
 import dj_database_url
 import dotenv
+import json
 
 dotenv.load_dotenv()
 
@@ -32,13 +33,9 @@ SECRET_KEY = os.getenv("SECRET_KEY", get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# get_hosts = os.getenv("ALLOWED_HOSTS", "").split()
-# print(get_hosts)
+get_hosts = json.loads(os.getenv("ALLOWED_HOSTS", []))
 
-# ALLOWED_HOSTS = get_hosts
-
-ALLOWED_HOSTS = ["localhost:3000", ".vercel.app", "127.0.0.1"]
-
+ALLOWED_HOSTS = get_hosts
 
 # Application definition
 APPEND_SLASH = False

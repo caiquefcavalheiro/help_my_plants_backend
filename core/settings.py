@@ -33,7 +33,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-get_hosts = json.loads(os.getenv("ALLOWED_HOSTS", ["*"]))
+get_hosts = json.loads(os.getenv("ALLOWED_HOSTS", []))
 
 ALLOWED_HOSTS = get_hosts
 

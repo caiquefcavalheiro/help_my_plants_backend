@@ -32,7 +32,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["help-my-plants.azurewebsites.net", "127.0.0.1", "localhost:3000", "help-my-plants-backend.vercel.app"]
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", [])
 
 # Application definition
 APPEND_SLASH = False

@@ -37,7 +37,7 @@ print(get_hosts)
 
 # ALLOWED_HOSTS = get_hosts
 
-ALLOWED_HOSTS = ["localhost:3000, help-my-plants-backend.vercel.app 127.0.0.1"]
+ALLOWED_HOSTS = ["localhost:3000, help-my-plants-backend.vercel.app, 127.0.0.1"]
 
 
 # Application definition

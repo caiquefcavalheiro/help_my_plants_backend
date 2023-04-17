@@ -6,4 +6,4 @@ A aplicação possui rotas para criação de usuários, criação de plantas, vi
 
 Podendo ser analisadas de forma melhor por meio da documentação abaixo:
 
-[Documentação Swagger](https://web-production-d7d5.up.railway.app/schema/swagger-ui)
+[Documentação Swagger](https://help-my-plants-backend.vercel.app/schema/swagger-ui#/)

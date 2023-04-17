@@ -32,7 +32,10 @@ SECRET_KEY = os.getenv("SECRET_KEY", get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", [])
+get_hosts = os.getenv("ALLOWED_HOSTS", []).split()
+
+ALLOWED_HOSTS = get_hosts
+
 
 # Application definition
 APPEND_SLASH = False
